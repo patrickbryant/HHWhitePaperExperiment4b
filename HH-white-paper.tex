@@ -1,0 +1,57 @@
+
+%
+%\documentclass[runningheads]{llncs}
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%
+\usepackage{graphicx}
+\usepackage{import}
+
+\usepackage[backend=biber]{biblatex}
+
+%\addbibresource{Bibliography.bib}
+\addbibresource{HH4b.bib}
+
+\begin{document}
+%
+\title{Double Higgs Pair production at colliders, status and perspectives}
+%
+%
+\author{{Editors: Biagio Di Micco$^1$$^2$, Maxime Gouzevitch$^3$, Javier Mazzitelli$^4$\\ and Caterina Vernieri$^5$}\\\\
+%
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{$^1$ Universit\`a degli Studi di Roma Tre \and $^2$ Sezione INFN \\ 
+\and $^3$ Institut de Physique Nucléaire de Lyon \\
+\and $^4$ University of Zurich \\
+\and $^5$ SLAC National Accelerator Laboratory}\\\\
+\email{biagio.di.micco@cern.ch, maxime.gouzevitch@cern.ch \\ jmazzi@physik.uzh.ch, caterina@slac.stanford.edu }}
+\tableofcontents
+%
+%\maketitle              % typeset the header of the contribution
+%
+%\begin{abstract}
+%\end{abstract}
+%\keywords{}
+\chapter{Experimental status}
+\input{HH4b.tex}
+   
+
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+%\bibliographystyle{splncs04}
+%\bibliographystyle{unsrt}
+\printbibliography[heading=bibintoc]
+%%\bibliography{Bibliography}
+
+
+%\bibliography{Bibliography}
+%
+
+\end{document}

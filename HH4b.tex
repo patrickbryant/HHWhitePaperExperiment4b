@@ -1,0 +1,204 @@
+\newcommand*{\ifb}{fb$^{-1}$ }
+\newcommand*{\smhh}{SM $HH$ }
+
+\section{$HH \to 4b$ Status and Perspectives}
+\label{sec:HH4b}
+
+%% 1. Current background modeling and trigger strategies:
+%% 	1.1 ATLAS: 2b->4b extrapolation in data
+%% 	1.2 CMS: Functional fit for resonance searches and hemisphere mixing for non resonant HH search. 
+%% 	1.3 Mutli-bjet triggers: L1 multijet triggers ~3kHz, HLT b-tag triggers ~40Hz in 2016/2017. (John’s slides) ATLAS measures trigger object level efficiencies and combines them to estimate event level efficiency. See my thesis chapter 9 for detailed explanation of this method. 
+
+%% 2. Limitations of current strategies:
+%% 	2.1 ATLAS: statistically limited validation technique, focus is on 1D model of final mHH discriminant in single Signal Region; less optimal than high dimensional model/MVA.  Iterative reweighting handles correlations in 2b->4b extrapolation. Requires triggers with no more than 2 online b-tags. 
+%% 	2.2 CMS: Multiple separate analyses of same final state. Hemisphere mixing background model has lower statistics than background model in ATLAS approach. May not model other background components well (ttbar, H/Z+Jets, HZ, ZZ). 
+%% 	2.3 High HLT CPU usage for tracking in b-jet triggers. Limited efficiency at L1 for mHH < 500 GeV (see my thesis fig 9.5c). 
+
+%% 3. Potential improvements
+%% 	3.1 Bootstrap multijet model from lower jet multiplicity, validate methods in 2b->3b. At low mHH signal contamination is negligible. At high mHH need to be careful with 3b data which can offer significant sensitivity. (Include 3b SR at high mHH in resolved analysis?)
+%% 	3.2 Machine learning techniques to extrapolate from 2/3b data to 4b data. Use hemisphere mixing or intentionally incorrect jet pairing to validate background model techniques in Signal Region phase space with smeared or reduced signal contamination. Use trijet data to validate some multijet background techniques. 
+%% 	3.3 Multiple signal regions of varying purity in combined fit and/or multidimensional fits including angular variables (SUSY, background/signal different spin correlations), (b-)jet multiplicity (target VLQ, RPV SUSY, VBF), to maximize sensitivity to broad range of models. Requires high dimensional background modeling and validation! 
+%% 	3.4 Dedicated SM ZZ/ZH measurements to further validate HH techniques (in analogy to successful VH measurements by both CMS and ATLAS). This will also be useful for analysis generalizations looking for additional scalars Y->XH->4b. 
+%% 	3.5 Hardware tracking! Brief outline of HTT(FTK) upgrades? 
+%% 	3.6 Attempts at 4b multijet MC? Dedicated SM multi-b unfolded xs measurement to help theory community?
+        
+%% In the absence of new high mass resonances this phase space holds the most general promise
+%% for exciting physics. The ultimate benchmark for LHC $HH$ physics is to be sensitive to \smhh production, and in particular
+%% to directly constrain the Higgs cubic coupling $\lambda_{hhh}$.
+
+%% Sensitivity to \smhh production with the ability to constrain $\lambda_{hhh}$ will have one of two consequences:
+%% \begin{enumerate}
+%%   \item Confirm the SM mechanism of electroweak symmetry breaking (Chapter \ref{sec:higgsMechanism}) and refute electroweak baryogenesis (Chapter \ref{sec:ewpt})
+%%     as the mechanism to provide an abundance of matter in the universe.
+%%   \item No observed \hh production or an enhanced \hh signal implying a modified Higgs potential or new fields coupled to the Higgs. 
+%% \end{enumerate}
+
+%% Our previous public result (released for the 2016 ICHEP conference in Chicago) in the $HH\rightarrow\bbbar\bbbar$ channel constituted the first attempt to
+%% select signal events across the full kinematically accessible phase space above $2m_{H}$.
+%% That result demonstrated the proof of concept that the four \bjet channel could compete with the $\bbbar\gamma\gamma$ and $\bbbar\tau\tau$
+%% channels in the low mass phase space.
+
+%% In that result we had not yet developed the \ttbar background constraints in data or the corresponding \ttbar veto. Our background model was substantially
+%% less sophisticated and prevented use of the corrected $\mfourj$ spectrum $\mhh$ as defined in equation \ref{eqn:mhh} due to poor modeling.
+%% The resulting large background systematic uncertainties substantially limited our sensitivity while still allowing us to set what at the time was the world leading limit
+%% on \smhh production signal strength.
+
+%% Despite the large background systematic uncertainties the 2016 ICHEP result provided the first useful benchmark for extrapolation of this channel
+%% to the end of the High Luminosity LHC (HL-LHC) run with $3000\,$\ifb recorded at $\sqrt{s}=14\,$TeV \cite{ATL-PHYS-PUB-2016-024}. 
+%% Two benchmark extrapolations were compared assuming the same analysis procedures and event selection as applied in 2016, one with the same systematic uncertainties
+%% and one without systematic uncertainties.
+%% These provide a rough envelope for what kind of sensitivity may be reasonably achieved and are shown in Figure \ref{fig:nominalExtrapolation}. 
+
+%% \begin{figure}
+%%   \begin{center}
+%%   \includegraphics[width=0.75\linewidth]{./figures/future/HL-LHC_nominal_2016_projections.pdf}
+%%   \caption{Expected 95\% C.L. upper limit on the cross-section $\mu\equiv\sigma(\hh\rightarrow\bbbar\bbbar)/\sigma_{\text{SM}}$,
+%%     as a function of the integrated luminosity of the search. The red line shows the upper limit when evaluated without systematic uncertainties,
+%%     while the green line assumes that the systematic uncertainties remain as they were in 2016.
+%%     The lower panel shows the ratio between these two limits. The extrapolated sensitivity is shown using the jet $\pt$ threshold of the 2016 search of $30\,\GeV$
+%%     with online trigger thresholds at the same $35\,\GeV$ as the primary trigger used in this analysis (see Chapter \ref{sec:triggerStudy}).}
+%%   \label{fig:nominalExtrapolation}
+%%   \end{center}
+%% \end{figure}
+
+%% Whether we meet or hopefully exceed these extrapolations will depend sensitively on both analysis improvements and detector and trigger performance.
+%% In section \ref{sec:analysisImprovements} we address some possible analysis improvements. Section \ref{sec:ftk} briefly introduces the Fast Tracker (FTK) --
+%% a system being developed by the ATLAS collaboration which will facilitate low threshold \bjet and $\tau$ triggers in high pileup data taking conditions.
+
+%% \section{Analysis Improvements}
+%% \label{sec:analysisImprovements}
+
+%% \begin{figure}
+%%   \begin{center}
+%%     \includegraphics[width=\linewidth]{figures/Results/272GeV.pdf}
+%%     \caption{An event with four $b$-tagged jets passing the Signal Region selection,
+%%       collected during 2016 in $13\,\TeV$ pp collision data. The value of $\mhh$ is $272\,\GeV$.
+%%       The tracks shown have transverse momenta above $2\,\GeV$, and the energy deposits in the calorimeters exceed $0.5\,\GeV$.}
+%%     \label{fig:eventDisplay}
+%%   \end{center}
+%% \end{figure}
+%% Figure \ref{fig:eventDisplay} shows an event passing the Signal Region selection with the near threshold $\mhh$ value of $272\,\GeV$.
+%% Note that at this low mass the Higgs candidate jets are required to have $\drjj\gtrapprox 1$ so the Higgs candidates are built from nearly back to back jets.
+%% In the signal hypothesis one does not expect the jets from different Higgs decays to be highly correlated in $\eta$ and $\phi$ while
+%% in the dominant background hypothesis we expect two to two gluon scattering to generate such a topology.
+%% It should be possible to further optimize the selection at low mass taking this into account to down-weight or remove events which are consistent with
+%% gluon scattering. 
+
+%% The extrapolation shown in Figure \ref{fig:nominalExtrapolation} uses the 2016 ICHEP analysis which had an expected 95\% C.L. upper limit of $\mu<38$
+%% using $13.3\,\ifb$ of data. If we scale up that background model to the $27.5\,\ifb$ used in this thesis the expected limit would be approximately $\mu<26$
+%% while the actual expected limit achieved was $\mu<21$. The improved background model, new $\ttbar$ veto and re-optimized kinematic cuts used in this thesis
+%% provided a 20\% improvement in expected sensitivity over improvements from luminosity scaling!
+
+%% To continue this trend we must improve our background modeling and validation techniques.
+%% %The most challenging aspect of this analysis is by far the multijet background modeling.
+%% With low statistics and high Higgs candidate $\pt$ cuts, the Run-1 \cite{EXOT-2014-11} and early Run-2 \cite{EXOT-2015-11} searches
+%% could barely see a systematic shape difference between the two and four \btag selections in data. A simple linear reweighting
+%% scheme with three variables was enough to ensure the background model in the Sideband and Control Regions was statistically consistent with the data.
+%% Figure \ref{fig:2015vs2018} shows the dramatic change in statistics and corresponding required statistical precision of the background model that comes
+%% from modeling the full $\mhh$ spectrum. 
+
+%% \begin{figure}
+%%   \begin{center}
+%%     \subfloat[2015 Analysis \cite{EXOT-2015-11} \newline $\approx  15$ events per $\ifb$ \newline $\approx 30\%$ statistical uncertainty at peak]{
+%%       \includegraphics[height=6.2cm]{./figures/future/m4j_SR_2015.pdf}}\hfill
+%%     \subfloat[This Thesis \newline $\approx 300$ events per $\ifb$ \newline $\approx  3\%$ statistical uncertainty at peak]{
+%%       \includegraphics[height=6cm]{./figures/Systematics/data_hh_v_logy_2016.pdf}}
+%%     \caption{The inclusive irreducible background cross section is twenty times larger than for the restricted phase space probed in the 2015 analysis.
+%%     The statistical uncertainty in the peak of the background is already at the percent level. Note the change in y-axis range in the ratio plots.}
+%%   \label{fig:2015vs2018}
+%%   \end{center}
+%% \end{figure}
+
+%% This thesis places us firmly in the realm of percent level precision modeling of heavy flavor multijet processes. One could argue, given that other searches
+%% have not found a similar excess at $\mhh\approx280\,\GeV$ that there is statistical evidence for underestimated background systematics.
+%% Obviously it would be deeply unscientific to use modeling in the Signal Region to assess systematic uncertainties for a future analysis.
+%% We find ourselves in need of a way to validate the background model with the statistical precision of the SR. One possibility would be to
+%% bootstrap modeling uncertainties in stages by applying the nominal model procedure to a three \btag selection.
+%% Such a selection should have negligible signal contamination, at least in the low $\mhh$ regime.\footnote{
+%%   Around $1<\mhh<1.5\,\TeV$ a 3 \btag Resolved selection may be competitive with the Boosted analysis 
+%%   but would significantly complicate orthogonality considerations. See Chapter \ref{sec:boostedSelection} and \cite{Tong:2634867} for
+%%   more information about the Boosted analysis.
+%% }
+%% This would provide sufficient statistics to validate the modeling procedure but would not fully cover the extrapolation from two to four $b$-tags.
+
+%% Another promising possibility is to test the full search procedure on the SM $pp\rightarrow ZZ\rightarrow \bbbar\bbbar$ process with a dedicated $ZZ$ selection.
+%% The same technique was used with great success in the recent $VH$ measurements \cite{Aaboud:2018zhk,Sirunyan:2636067} as well as exotic searches for
+%% fat jet resonances such as \cite{Sirunyan:2017dgc} and \cite{Aaboud:2018zba}.
+
+%% While $BR(Z\rightarrow\bbbar) = 15\%$ is smaller than $BR(H\rightarrow\bbbar) = 58\%$, the total cross section $\sigma(pp\rightarrow ZZ)\approx 16\,$pb
+%% is nearly five hundred times larger than the SM prediction $\sigma(pp\rightarrow HH)\approx 34\,$fb.
+%% The same principle applies to even greater effect for the $HH\rightarrow\bbbar\tau\tau$ searches. For $\sqrt{s}=13\,\TeV$ the SM cross section ratios are
+%% \begin{equation*}
+%%   \begin{split}
+%%     \frac{\sigma(pp\rightarrow ZZ\rightarrow\bbbar\bbbar)  }{\sigma(pp\rightarrow HH\rightarrow\bbbar\bbbar)  } &\approx 31 \\[10pt]
+%%     \frac{\sigma(pp\rightarrow ZZ\rightarrow\bbbar\tau\tau)}{\sigma(pp\rightarrow HH\rightarrow\bbbar\tau\tau)} &\approx 71
+%%   \end{split}
+%% \end{equation*}
+%% Given that the current 95\% C.L. upper limits on $\mu$ for the $\bbbar\bbbar$ and $\bbbar\tau\tau$ channels are both $~13$ (see Table \ref{tab:leadingHH})
+%% we should study the potential for measuring $ZZ$ production prior to the next round of publications.
+
+%% The results in this thesis are based on fits in a single signal region to the $\mhh$ spectrum. With significant $ZZ$ sensitivity a combined fit in $ZZ$, $HH$ and
+%% multijet and \ttbar background enhanced regions both the signal and background systematics could be constrained directly.
+
+%% \section{The Fast Tracker}
+%% \label{sec:ftk}
+
+%% \begin{figure}
+%%   \begin{center}
+%%   \includegraphics[width=0.75\linewidth]{./figures/future/HL-LHC_jetPt_2016_projections.pdf}
+%%   \caption{Expected 95\% C.L. upper limit on the cross-section $\mu\equiv\sigma(\hh\rightarrow\bbbar\bbbar)/\sigma_{\text{SM}}$,
+%%     as a function of the online jet $\pt$ threshold \cite{Collaboration:2285584}.}
+%%   \label{fig:jetPtExtrapolation}
+%%   \end{center}
+%% \end{figure}
+
+%% Before analysis improvements can be implemented we must upgrade the ATLAS and CMS detectors such that they can efficiently trigger on $HH$ signal events
+%% with all hadronic final states. Figure \ref{fig:jetPtExtrapolation} shows the expected limit on $\mu$ from the $\bbbar\bbbar$ HL-LHC extrapolation \cite{ATL-PHYS-PUB-2016-024}
+%% with zero systematic uncertainty as a function of the online jet $\pt$ threshold.
+%% Keeping the threshold of a four jet trigger as used in this thesis (Chapter \ref{sec:triggerStudy}) below $\approx60\,\GeV$ will be required to avoid significant losses in
+%% sensitivity.
+
+%% The primary trigger used in this thesis requires four jets with transverse momentum above $35\,\GeV$ where at least two jets are \btagged at the 60\% working point.
+%% Online \btagging is critical to keeping these \pt thresholds low but, requires high precision tracking for primary and secondary vertex identification.
+%% The CPU resources needed for precision tracking grows nonlinearly with the number of pileup interactions and a new approach will be needed in the High Luminosity era
+%% with pileup expected to exceed 200 interactions per bunch crossing.
+
+%% The ATLAS collaboration is addressing this issue by developing hardware based track reconstruction systems starting with the Fast TracKer (FTK).
+%% The FTK is being integrated with the ATLAS trigger system now and is planned to be used for physics in Run-3 where we expect around 80 pileup interactions per bunch crossing.
+%% The FTK is designed to provide track reconstruction for the full inner detector (ID, see Chapter \ref{sec:tracking}) at the 100\,kHz L1 output rate.
+%% Software triggers in the HLT can then directly use tracks provided by FTK or use them to seed the full offline tracking algorithm. In either case, the track reconstruction
+%% burden placed on the HLT by \bjet triggers will be largely eliminated.
+
+%% The FTK uses a staged, massively parallel architecture with seven types of custom printed circuit boards (PCBs) shown in Figure \ref{fig:ftkDiagram}
+%% and hundreds of high speed fiber optic links connecting them.
+%% The data flow and staged track fitting process is summarized below:
+%% \begin{enumerate}
+%%   \item Raw hit data from the ID is clustered in the Input Mezzanine cards (IM).
+%%   \item Cluster coordinates and widths are grouped and distributed between Data Formatter boards before being routed to the appropriate track fitting boards.
+%%     Clusters from 5 SCT layers and three pixel layers are sent to the first stage tracking boards (AUX) while the data from the other three SCT layers and IBL
+%%     are sent to the Second Stage Boards (SSB).
+%%   \item The clusters from the eight layers sent to the AUX are converted to coarse resolution hits called Super Strips (SSID). The full resolution clusters are stored
+%%     in a linked memory structure by their SSID while the SSIDs are sent to the Associative Memory Board (AMB).
+%%   \item The AMB routes the SSID streams through custom ASICs which each store rough track patterns called Roads. The ID number for Roads matched to at least seven
+%%     out of eight layers are then sent back to the AUX.
+%%   \item The AUX looks up the SSIDs contained in each returned Road and retrieves the corresponding full resolution cluster data. A linearized track candidate $\chi^2$
+%%     (goodness of fit) is computed for all possible combinations of clusters in a Road. Track candidates passing a maximum $\chi^2$ threshold are passed on for
+%%     overlap removal. The candidate with the lowest $\chi^2$ in a given Road is forwarded to an SSB.
+%%   \item The SSB extrapolates the first stage tracks to the other four detector layers and computes a new twelve layer $\chi^2$ and helix parameters.
+%%     Overlap removal is then applied to tracks which pass the twelve layer $\chi^2$ threshold.
+%%   \item Second stage tracks are formatted by the FTK Level-2 Interface Cards (FLIC) and sent to the Readout System (ROS) for use in the software based triggers.
+%% \end{enumerate}
+
+%% \begin{figure}
+%%   \begin{center}
+%%   \includegraphics[width=\linewidth]{./figures/future/ftkDiagram.pdf}
+%%   \caption{The seven custom PCB types of FTK. The full system will consist of 128 Input Mezzanines (IM), 32 Data Formatters (DF), 128 Auxiliary cards (AUX),
+%%   128 Associative Memory Boards (AMB), 512 Local AMBs (LAMB), 32 Second Stage Boards (SSB) and 2 FTK Level-2 Interface Cards (FLIC).}
+%%   \label{fig:ftkDiagram}
+%%   \end{center}
+%% \end{figure}
+
+%% %% The author of this thesis contributed significantly to the development, testing and integration of FTK with a particular emphasis on the AUX board
+%% %% which was designed and tested at the University of Chicago. 
+
+

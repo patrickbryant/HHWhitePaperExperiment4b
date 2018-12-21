@@ -1,11 +1,17 @@
+%% requires the following packages
+%% \usepackage{xspace}
+%% \usepackage{caption,subfig,epsfig}
+%% \usepackage{amsmath}
+
 \newcommand*{\ifb}{fb$^{-1}$\xspace}
 \newcommand*{\smhh}{SM $HH$\xspace}
-\newcommand*{\bbbb}{$b\bar{b}b\bar{b}$\xspace}
-\newcommand*{\hh}{$HH$\xspace}
+\newcommand*{\bbbb}{\ensuremath{b\bar{b}b\bar{b}}\xspace}
+\newcommand*{\bb}{\ensuremath{b\bar{b}}\xspace}
+\newcommand*{\hh}{\ensuremath{HH}\xspace}
 \newcommand*{\bjet}{$b$-jet\xspace}
 \newcommand*{\bjets}{$b$-jets\xspace}
-\newcommand*{\mhh}{$m_{HH}$\xspace}
-\newcommand*{\mh}{$m_{H}$\xspace}
+\newcommand*{\mhh}{\ensuremath{m_{HH}}\xspace}
+\newcommand*{\mh}{\ensuremath{m_{H}}\xspace}
 
 \section{$HH\to\,$\bbbb: Status and Perspectives}
 \label{sec:HH4b}
@@ -20,6 +26,22 @@ lays out possible paths forward where there is clear room for improvement and op
 
 \subsection{Current background modeling and trigger strategies}
 \label{sec:current4b}
+
+\begin{figure}
+  \begin{center}
+    \subfloat[2015 Analysis \cite{EXOT-2015-11}
+      \newline $\approx 15$ events per \ifb
+      \newline $\approx 30\%$ statistical uncertainty at peak]{
+      \includegraphics[height=4.6cm]{./figures/HH4b/m4j_SR_2015.pdf}}\hfill
+    \subfloat[2018 Analysis \cite{Bryant:2644551} \bf{UPDATE WHEN PAPER IS OUT}
+      \newline $\approx 300$ events per \ifb
+      \newline $\approx  3\%$ statistical uncertainty at peak]{
+      \includegraphics[height=4.4cm]{./figures/HH4b/data_hh_v_logy_2016.pdf}}
+    \caption{The inclusive irreducible background cross section is twenty times larger than for the restricted phase space probed in the 2015 analysis.
+    The statistical uncertainty in the peak of the background is already at the percent level. Note the change in y-axis range in the ratio plots.}
+  \label{fig:2015vs20184b}
+  \end{center}
+\end{figure}
 
 ATLAS: 2b->4b extrapolation in data
 
@@ -39,6 +61,16 @@ Trigger: High HLT CPU usage for tracking in b-jet triggers. Limited efficiency a
 \subsection{Potential Improvements}
 \label{sec:improvements4b}
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\linewidth]{figures/HH4b/272GeV.pdf}
+    \caption{An event with four $b$-tagged jets passing the Signal Region selection,
+      collected during 2016 in $13\,$TeV $pp$ collision data. The value of \mhh is $272\,$GeV.
+      The tracks shown have transverse momenta above $2\,$GeV, and the energy deposits in the calorimeters exceed $0.5\,$GeV.}
+    \label{fig:eventDisplay4b}
+  \end{center}
+\end{figure}
+
 3.1 Bootstrap multijet model from lower jet multiplicity, validate methods in 2b->3b. At low mHH signal contamination is negligible. At high mHH need to be careful with 3b data which can offer significant sensitivity. (Include 3b SR at high mHH in resolved analysis?)
 
 3.2 Machine learning techniques to extrapolate from 2/3b data to 4b data. Use hemisphere mixing or intentionally incorrect jet pairing to validate background model techniques in Signal Region phase space with smeared or reduced signal contamination. Use trijet data to validate some multijet background techniques. 
@@ -47,6 +79,12 @@ Trigger: High HLT CPU usage for tracking in b-jet triggers. Limited efficiency a
 deling and validation! 
 
 3.4 Dedicated SM ZZ/ZH measurements to further validate HH techniques (in analogy to successful VH measurements by both CMS and ATLAS). This will also be useful for analysis generalizations looking for additional scalars Y->XH->4b. 
+\begin{equation*}
+  \begin{split}
+    \frac{\sigma(pp\rightarrow ZZ\rightarrow\bbbb)  }{\sigma(pp\rightarrow HH\rightarrow\bbbb)  } &\approx 31 \\[10pt]
+    \frac{\sigma(pp\rightarrow ZZ\rightarrow\bb\tau\tau)}{\sigma(pp\rightarrow HH\rightarrow\bb\tau\tau)} &\approx 71
+  \end{split}
+\end{equation*}
 
 3.5 Hardware tracking! Brief outline of HTT(FTK) upgrades? 
 

@@ -1,11 +1,25 @@
-\newcommand*{\ifb}{fb$^{-1}$ }
-\newcommand*{\smhh}{SM $HH$ }
+\newcommand*{\ifb}{fb$^{-1}$\xspace}
+\newcommand*{\smhh}{SM $HH$\xspace}
+\newcommand*{\bbbb}{$b\bar{b}b\bar{b}$\xspace}
+\newcommand*{\hh}{$HH$\xspace}
+\newcommand*{\bjet}{$b$-jet\xspace}
+\newcommand*{\bjets}{$b$-jets\xspace}
+\newcommand*{\mhh}{$m_{HH}$\xspace}
+\newcommand*{\mh}{$m_{H}$\xspace}
 
-\section{$HH \to 4b$ Status and Perspectives}
+\section{$HH\to\,$\bbbb: Status and Perspectives}
 \label{sec:HH4b}
+The plurality of \hh events decay via the \bbbb channel providing searches in the four \bjet final state with dominant sensitivity above some \mhh threshold.
+Unfortuntely, most of the impact of modifications to the Higgs cubic coupling to the \hh cross section is near the $2\times$\mh thresold.
+In this phase space the irreducible multi-\bjet background is on the order of 200$\,$fb with signal efficiencies around 1\%.
+
+Maximising the physics potential of the \bbbb channel thus requires precision modeling of complex backgrounds without reliable simulation
+and the ability to trigger on events with multiple, generically soft \bjets. In section \ref{sec:current4b} we introduce the current
+approaches to these challenges. Section \ref{sec:limitations4b} outlines the limitations of the existing methods. Section \ref{sec:improvements4b}
+lays out possible paths forward where there is clear room for improvement and opportunities for innovation. 
 
 \subsection{Current background modeling and trigger strategies}
-%% 1. Current background modeling and trigger strategies:
+\label{sec:current4b}
 
 ATLAS: 2b->4b extrapolation in data
 
@@ -14,6 +28,7 @@ CMS: Functional fit for resonance searches and hemisphere mixing for non resonan
 Trigger: L1 multijet triggers ~3kHz, HLT b-tag triggers ~40Hz in 2016/2017. (John’s slides) ATLAS measures trigger object level efficiencies and combines them to estimate event level efficiency. See my thesis chapter 9 for detailed explanation of this method.
 
 \subsection{Limitations of Current Strategies}
+\label{sec:limitations4b}
 
 ATLAS: statistically limited validation technique, focus is on 1D model of final mHH discriminant in single Signal Region; less optimal than high dimensional model/MVA.  Iterative reweighting handles correlations in 2b->4b extrapolation. Requires triggers with no more than 2 online b-tags.
 
@@ -22,6 +37,7 @@ CMS: Multiple separate analyses of same final state. Hemisphere mixing backgroun
 Trigger: High HLT CPU usage for tracking in b-jet triggers. Limited efficiency at L1 for mHH < 500 GeV (see my thesis fig 9.5c).
 
 \subsection{Potential Improvements}
+\label{sec:improvements4b}
 
 3.1 Bootstrap multijet model from lower jet multiplicity, validate methods in 2b->3b. At low mHH signal contamination is negligible. At high mHH need to be careful with 3b data which can offer significant sensitivity. (Include 3b SR at high mHH in resolved analysis?)
 

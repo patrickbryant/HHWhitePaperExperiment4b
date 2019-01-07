@@ -20,17 +20,12 @@
 
 \section{$HH\to\,$\bbbb: Status and Perspectives}
 \label{sec:HH4b}
-The plurality of \hh events decay via the \bbbb channel ensuring searches in the four \bjet final state dominant sensitivity above some \mhh threshold.
-Unfortuntely, most of the impact of modifications to the Higgs cubic coupling to the \hh cross section is near the $2\times$\mh thresold.
+
+The plurality of \hh events decay via the \bbbb channel ensuring searches in the four \bjet final state dominant sensitivity above some value of \mhh.
+Since the start of Run-2, much of the experimental effort has been in lowering this sensitivity limit by loosening kinematic cuts
+and modeling the substantially increased background acceptance as illustrated in Figure \ref{fig:2015vs20184b}.
+Unfortunately, most of the impact of modifications to the Higgs cubic coupling to the \hh cross section is near the $2\times$\mh thresold.
 In this phase space the irreducible multi-\bjet background is on the order of 300$\,$fb with signal efficiencies around 1\%.
-
-Maximising the physics potential of the \bbbb channel thus requires precision modeling of complex backgrounds without reliable simulation
-and the ability to trigger on events with multiple, generically soft \bjets. In section \ref{sec:current4b} we introduce the current
-approaches to these challenges. Section \ref{sec:limitations4b} outlines the limitations of the existing methods. Section \ref{sec:improvements4b}
-lays out possible paths forward where there is clear room for improvement and opportunities for innovation. 
-
-\subsection{Current Strategies}
-\label{sec:current4b}
 
 \begin{figure}
   \begin{center}
@@ -42,11 +37,19 @@ lays out possible paths forward where there is clear room for improvement and op
       \newline $\approx 300$ events per \ifb
       \newline $\approx  3\%$ statistical uncertainty at peak]{
       \includegraphics[height=4.4cm]{./figures/HH4b/data_hh_v_logy_2016.pdf}}
-    \caption{The inclusive irreducible background cross section is twenty times larger than for the restricted phase space probed in the 2015 analysis.
-    The statistical uncertainty in the peak of the background is already at the percent level. Note the change in y-axis range in the ratio plots.}
+    \caption{Loosened kinematic cuts in the most recent ATLAS search increased the background acceptance by a factor of twenty relative to the restricted phase space probed in the first Run-2 result.
+      The statistical uncertainty in the peak of the background is now at the percent level. Note the change in y-axis range in the ratio plots.}
   \label{fig:2015vs20184b}
   \end{center}
 \end{figure}
+
+Maximising the physics potential of the \bbbb channel thus requires precision modeling of complex backgrounds without reliable simulation
+and the ability to trigger on events with multiple, generically soft \bjets. In section \ref{sec:current4b} we introduce the current
+approaches to these challenges. Section \ref{sec:limitations4b} outlines the limitations of the existing methods. Section \ref{sec:improvements4b}
+lays out possible paths forward where there is clear room for improvement and opportunities for innovation. 
+
+\subsection{Current Strategies}
+\label{sec:current4b}
 
 %% ATLAS: 2b->4b extrapolation
 The approach taken by the ATLAS collaboration since the beginning has been to model high \bjet multiplicity events with low \bjet multiplicty events.
@@ -74,11 +77,28 @@ At L1 these trigger items fired at approximately 3\,kHz requiring significant HL
 \subsection{Limitations of Current Strategies}
 \label{sec:limitations4b}
 
-ATLAS: statistically limited validation technique, focus is on 1D model of final mHH discriminant in single Signal Region; less optimal than high dimensional model/MVA.  Iterative reweighting handles correlations in 2b->4b extrapolation. Requires triggers with no more than 2 online b-tags.
+%%ATLAS: statistically limited validation technique, focus is on 1D model of final mHH discriminant in single Signal Region; less optimal than high dimensional model/MVA.
+%%Iterative reweighting handles correlations in 2b->4b extrapolation. Requires triggers with no more than 2 online b-tags.
+The ATLAS and CMS approaches suffer from statistically limited background control and validation regions.
+The assumptions that go into generating a background model from data must be tested and should not be assumed to hold to a higher degree of precision than can be tested outside of the signal region.
+Systematic uncertainties are assigned to account for the statistical uncertainty in the background model derivation and validation.
+Such uncertainties are difficult to quantitatively assess, particularly when they have nontrivial effects on distributions beyond their normalization.
 
-CMS: Multiple separate analyses of same final state. Hemisphere mixing background model has lower statistics than background model in ATLAS approach. May not model other background components well (ttbar, H/Z+Jets, HZ, ZZ).
+The recent ATLAS result \cite{Aaboud:2018knk,Bryant:2644551} attempted to address this by deriving the background model twice
+using orthogonal kinematic selections and using resulting the variation in signal region prediction to define systematic uncertainties.
+In principle this method accounts for biases in the model due to the extrapolation into the signal region by making one model derivation region kinematically ``closer'' to the signal region.
+It also naturally provides a full spectrum (and in principle high dimensional) uncertainty for the final discriminant distribution with the proper bin to bin correlations.
+Ideally one would chop the phase space into many orthogonal regions, each progressively closer to the signal region, such that trends in the extrapolation of the models accross phase space could be extracted.
+Unfortunately, attempts to do this quickly become statistically limited as each model derivation region should have comparible statistics to the signal region. 
 
-Trigger: High HLT CPU usage for tracking in b-jet triggers. Limited efficiency at L1 for mHH < 500 GeV (see my thesis fig 9.5c).
+These issues are compounded when trying to model higher dimensional target spaces to improve the optimality and model independence of searches. 
+
+%%CMS: Multiple separate analyses of same final state.
+%%Hemisphere mixing background model has lower statistics than background model in ATLAS approach.
+%%May not model other background components well (ttbar, H/Z+Jets, HZ, ZZ).
+
+%%Trigger: High HLT CPU usage for tracking in b-jet triggers.
+%%Limited efficiency at L1 for mHH < 500 GeV (see my thesis fig 9.5c).
 
 \subsection{Potential Improvements}
 \label{sec:improvements4b}

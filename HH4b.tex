@@ -1,7 +1,7 @@
 %% requires the following packages
 %% \usepackage{xspace}
 %% \usepackage{caption,subfig,epsfig}
-%% \usepackage{amsmath}
+%% \usepackage{amssymb,amsmath}
 
 \newcommand*{\ifb}{fb$^{-1}$\xspace}
 \newcommand*{\smhh}{SM $HH$\xspace}
@@ -77,11 +77,15 @@ At L1 these trigger items fired at approximately 3\,kHz requiring significant HL
 \subsection{Limitations of Current Strategies}
 \label{sec:limitations4b}
 
+While ATLAS focused on providing a unified analysis strategy for all $\hh\rightarrow\bbbb$ searches,
+CMS experimented with independent strategies for low, intermediate and high mass resonances and non-resonant production.
+Given the relatively different experimental challenges and event topologies of these regimes, it is not a-priori obvious if the unified or divide and conquer approaches will provide better results.
+It is certainly useful to now be able to evaluate the limitations of a broad set of approaches. 
+
 %%ATLAS: statistically limited validation technique, focus is on 1D model of final mHH discriminant in single Signal Region; less optimal than high dimensional model/MVA.
 %%Iterative reweighting handles correlations in 2b->4b extrapolation. Requires triggers with no more than 2 online b-tags.
-The ATLAS and CMS approaches suffer from statistically limited background control and validation regions.
-The assumptions that go into generating a background model from data must be tested and should not be assumed to hold to a higher degree of precision than can be tested outside of the signal region.
-Systematic uncertainties are assigned to account for the statistical uncertainty in the background model derivation and validation.
+The ATLAS and CMS approaches all suffer from statistically limited validation regions.
+The assumptions that go into generating a background model from data should not be assumed to hold to a higher degree of precision than can be tested outside of the signal region.
 Such uncertainties are difficult to quantitatively assess, particularly when they have nontrivial effects on distributions beyond their normalization.
 
 The recent ATLAS result \cite{Aaboud:2018knk,Bryant:2644551} attempted to address this by deriving the background model twice
@@ -89,13 +93,25 @@ using orthogonal kinematic selections and using resulting the variation in signa
 In principle this method accounts for biases in the model due to the extrapolation into the signal region by making one model derivation region kinematically ``closer'' to the signal region.
 It also naturally provides a full spectrum (and in principle high dimensional) uncertainty for the final discriminant distribution with the proper bin to bin correlations.
 Ideally one would chop the phase space into many orthogonal regions, each progressively closer to the signal region, such that trends in the extrapolation of the models accross phase space could be extracted.
-Unfortunately, attempts to do this quickly become statistically limited as each model derivation region should have comparible statistics to the signal region. 
+Unfortunately, attempts to do this quickly become limited by the need to validate each model at the statistical precision anticipated in the signal region.
+If this requirement is not kept, large systamtic uncertainties will be required to cover the lack of precision in the model validation. 
+These issues are compounded when trying to model higher dimensional target spaces to improve the optimality and model independence of searches.
 
-These issues are compounded when trying to model higher dimensional target spaces to improve the optimality and model independence of searches. 
+One of the primary limitations of the current approach on ATLAS is the algorithm used to derive the reweighting from low to high \bjet multiplicty.
+The method iteratively reweights multiple one dimensional distributions which are selected to encapsulate the primary differences in the scattering processes with as few variables as possible.
+This avoids the statistical limitations of high dimensional histograms but may not correctly account for (anti)correlations between the reweighted distributions.
+With the 27.5\,\ifb modeled in \cite{Aaboud:2018knk,Bryant:2644551} one could argue hints of such effects are becoming visible and a new strategy will almost certainly be required for analysis of the full Run-2 dataset. 
 
 %%CMS: Multiple separate analyses of same final state.
 %%Hemisphere mixing background model has lower statistics than background model in ATLAS approach.
 %%May not model other background components well (ttbar, H/Z+Jets, HZ, ZZ).
+In the low mass phase space near the kinematic threshold $\mhh\gtrapprox 250\,$GeV, the CMS and ATLAS searches suffer from the ``believability'' of any potential excess on top of a sharply peaking background\footnote{
+  This issue is obfuscated in the CMS non-resonant search where the problem of constraining a sharply peaking background remains, only now the peak is represented in the high dimensional BDT input space.
+}.
+
+The ATLAS background strategy and the functional fits used by CMS can easily accomodate subdominant background sources like \ttbar, $H/Z+$jets and diboson processes using simulated samples.
+It is not obvious however that the hemisphere mixing approach used for the CMS non-resonant result can appropriately model the event level correlations of such processes.
+Furthermore, to avoid tricky statistical issues, the hemisphere mixing can only use each source event once, limiting the statitical precision of the background model to that of the true background. 
 
 %%Trigger: High HLT CPU usage for tracking in b-jet triggers.
 %%Limited efficiency at L1 for mHH < 500 GeV (see my thesis fig 9.5c).

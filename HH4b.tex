@@ -4,9 +4,11 @@
 %% \usepackage{amssymb,amsmath}
 
 \newcommand*{\ifb}{fb$^{-1}$\xspace}
+\newcommand*{\inbs}{nb$^{-1}$/s\xspace}
 \newcommand*{\smhh}{SM $HH$\xspace}
 \newcommand*{\bbbb}{\ensuremath{b\bar{b}b\bar{b}}\xspace}
 \newcommand*{\bb}{\ensuremath{b\bar{b}}\xspace}
+\newcommand*{\ttbar}{\ensuremath{t\bar{t}}\xspace}
 \newcommand*{\hh}{\ensuremath{HH}\xspace}
 \newcommand*{\bjet}{$b$-jet\xspace}
 \newcommand*{\bjets}{$b$-jets\xspace}
@@ -115,6 +117,13 @@ Furthermore, to avoid tricky statistical issues, the hemisphere mixing can only 
 
 %%Trigger: High HLT CPU usage for tracking in b-jet triggers.
 %%Limited efficiency at L1 for mHH < 500 GeV (see my thesis fig 9.5c).
+Both ATLAS and CMS face significant challenges in the hardware and software triggers.
+The current trigger efficiencies are limited at L1 for events with $\mhh\lessapprox 500\,$GeV as illustrated in Figure 9.5(c) in \cite{Bryant:2644551}.
+In the HLT, the challenge is to perform the precision tracking required to reconstruct secondary verticies without using excessive CPU resources.
+The required CPU time to perform online \btagging grows nonlinearly with pileup.
+At the end of the 2016 run, ATLAS requested luminosity leveling to keep the instantaneous luminosity below 20\,\inbs to regulate the CPU consumption of the $b$-trigger menu.
+This limitation was removed for the remainder of Run-2 by optimizing the triggers and tracking thresholds but new techniques will be required to accommodate the luminosity targets of Run-3.
+
 
 \subsection{Potential Improvements}
 \label{sec:improvements4b}
